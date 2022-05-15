@@ -97,42 +97,6 @@
 
 #pragma mark PUBLIC INSTANCE METHODS -- NSView OVERRIDES
 
-/*
-//	drawRect: -- Display all pages of the PDF document.
-- (void) drawRect: (NSRect) rect
-{
-    NSPDFImageRep	*rep;
-	NSInteger       pageCount;
-    NSInteger       pageNumber;
-    NSRect			onePageBounds;
-
-    //	Apparently, a PDF doesn't always draw its margins, so make them white
-    //	by drawing our entire background as white.
-    [[NSColor whiteColor] set];
-    NSRectFill (rect);
-
-    //	Get the information from the PDF image representation:
-    //	how many pages, and how large is each one?
-    rep = [self pdfRep];
-	pageCount = [rep pageCount];
-
-    //	Iterate through all pages
-    for (pageNumber = 0; pageNumber < pageCount; pageNumber++)
-    {
-        //	Use the printing code (which uses one-based numbering) to find where
-        //	this page appears.
-        onePageBounds = [self rectForPage: (1+pageNumber)];
-
-        //	Draw this page only if some of its bounds overlap the drawing area
-        if (! NSIntersectsRect (rect, onePageBounds))
-            continue;
-
-		[rep setCurrentPage: pageNumber];
-		[rep drawInRect: onePageBounds];
-    }
-}
-*/
-
 - (void) drawRect: (NSRect) rect
 {
     NSPDFImageRep    *rep;
@@ -168,7 +132,7 @@
         
         // Draws image up to Mohave with opacity parameter
         // In Catalina and above only draws the same page repeatedly depending on pageNumber
-        /*
+/*
         [(NSImageRep *)rep drawInRect:onePageBounds
                              fromRect:NSZeroRect
                             operation:NSCompositingOperationSourceOver // NSCompositeSourceOver
@@ -176,7 +140,7 @@
                              fraction:0.6
                        respectFlipped:NO
                                 hints:NULL];
-         */
+*/
     }
 }
 
