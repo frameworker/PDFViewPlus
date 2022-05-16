@@ -7,14 +7,12 @@ Notice that the fancy drawInRect in PDFImageView.m screws up in 10.15 and greate
         [rep drawInRect: onePageBounds];
         
         // Draws image up to Mohave with opacity parameter
-        // In Catalina and above only draws the same page repeatedly depending on pageNumber
-/*
+        // In Catalina and above only draws the same page repeatedly
+
         [(NSImageRep *)rep drawInRect:onePageBounds
                              fromRect:NSZeroRect
                             operation:NSCompositingOperationSourceOver // NSCompositeSourceOver
-         //.                 fraction:[self backgroundOpacity] // 0.0 < x < 1.0
-                             fraction:0.6
+                             fraction:[self backgroundOpacity] // 0.0 < x < 1.0
                        respectFlipped:NO
                                 hints:NULL];
-*/
-
+                                
